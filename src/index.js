@@ -1,4 +1,10 @@
-const formData = {
+const form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  
+  // THis is to Prevent the form's default behavior
+  e.preventDefault();
+
+  const formData = {
     name: e.target.name.value,
     email: e.target.email.value,
     phone: e.target.phone.value,
@@ -6,7 +12,8 @@ const formData = {
     message: e.target.message.value,
   };
 
-renderConfirmation(formData);
+  renderConfirmation(formData);
+});
   
 const renderConfirmation = (formData) => {
     const h2 = document.createElement("h2");
